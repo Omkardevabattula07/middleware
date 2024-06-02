@@ -48,6 +48,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'middleapp.middleware.visitlimit',#here middleware is a app name and visit limit is a class name in middleware.py file
+
 ]
 
 ROOT_URLCONF = 'middlep.urls'
@@ -81,6 +83,11 @@ DATABASES = {
     }
 }
 
+CACHES={
+    'default':{
+        "BACKEND":"django.core.cache.backends.locmem.LocMemCache",
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
